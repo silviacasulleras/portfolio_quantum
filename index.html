@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 font-sans">
+
+  <!-- Intro -->
+  <section class="py-12 text-center">
+    <img src="figures/profile.jpg" alt="Silvia Casulleras" class="w-32 h-32 mx-auto rounded-full object-cover mb-4 shadow-md">
+    <h1 class="text-4xl font-bold mb-1">Silvia Casulleras</h1>
+    <h2 class="text-xl text-gray-600 mb-4">Postdoctoral Researcher in Theoretical Quantum Physics</h2>
+    <p class="text-base max-w-2xl mx-auto text-gray-700 leading-relaxed">
+      I am a postdoctoral researcher in theoretical quantum physics with extensive experience in mathematical and 
+      numerical modeling, optimization, and high-performance simulations. My research focuses on designing control
+      protocols for nanoscale quantum systems.
+      <br>
+      This portfolio presents selected projects illustrating my background in computational modeling and data-driven analysis. 
+    </p>
+  </section>
+
+  <!-- Projects Grid -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+    <div class="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
+
+      <!-- Project 1 -->
+      <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+        <img src="figures/quantum_particle.png" alt="Quantum Particle" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Optimal Control of a Levitated Quantum Particle</h3>
+          <p class="text-gray-700 mb-4">Designed static potentials to control a levitated nanoparticle and enhance its quantum properties. Simulated the 
+            particle’s time evolution and analyzed its quantum state with workflows for modeling, propagation, and constrained optimization.
+</p>
+          <div class="flex gap-4 mt-4">
+            <a href="https://github.com/silviacasulleras/potential_optimization" class="text-blue-600 font-medium hover:underline">View Repository →</a>
+            <a href="https://journals.aps.org/pra/abstract/10.1103/PhysRevA.110.033511" class="text-gray-600 hover:underline">Publication →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+        <img src="figures/magnonic_pulses.png" alt="Magnonic Pulses" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Inverse Design of Pulses in Magnonic Waveguides</h3>
+          <p class="text-gray-700 mb-4">Developed pulses for magnonic waveguides using GPU-accelerated simulations. Combined numerical modeling with inverse design to shape pulses for controlling magnon dynamics.</p>
+          <div class="flex gap-4 mt-4">
+            <a href="https://github.com/silviacasulleras/spin_waves" class="text-blue-600 font-medium hover:underline">View Repository →</a>
+            <a href="https://journals.aps.org/prapplied/abstract/10.1103/PhysRevApplied.19.064085" class="text-gray-600 hover:underline">Publication →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+        <img src="figures/qubit_pulses.png" alt="Qubit Pulses" class="w-full h-56 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Remote Manipulation of Qubits in Waveguides</h3>
+          <p class="text-gray-700 mb-4">Designed electromagnetic pulses to manipulate qubits in a waveguide using analytical modeling and simulations of time evolution. Collaborated with experimentalists, and the proposed protocol was successfully implemented in the laboratory.</p>
+          <div class="flex gap-4 mt-4">
+            <a href="https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.126.103602" class="text-gray-600 hover:underline">Publication →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4: Wildfire -->
+      <div class="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+        <img id="wildfire-img" src="figures_wildfire/before.png" alt="Wildfire NDVI" class="w-full h-56 object-cover transition-all duration-500">
+        <div class="p-6">
+          <h3 class="text-xl font-semibold mb-2">Wildfire Impact and Vegetation Regeneration</h3>
+          <p class="text-gray-700 mb-4">
+            A small Earth Observation project analyzing a wildfire in a chosen region of the Mediterranean. Tracked vegetation dynamics before, during, just after, and two years 
+            later using NDVI maps. The results show a clear recovery of vegetation already within two years after the event. 
+            (Implemented in Google Earth Engine JavaScript API using Sentinel-2 satellite imagery). 
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- JavaScript for Wildfire animation -->
+  <script>
+    const wildfireImages = [
+      "figures_wildfire/before.png",
+      "figures_wildfire/just_after.png",
+      "figures_wildfire/2years.png"
+    ];
+
+    let index = 0;
+    const imgElement = document.getElementById("wildfire-img");
+
+    setInterval(() => {
+      index = (index + 1) % wildfireImages.length;
+      imgElement.src = wildfireImages[index];
+    }, 3000);
+  </script>
+
+</body>
+</html>
